@@ -36,6 +36,21 @@ import { readBlockConfig } from '../../scripts/aem.js';
 import { fetchPlaceholders, rootLink, getProductLink } from '../../scripts/commerce.js';
 
 export default async function decorate(block) {
+
+  // config for dropdown quantity selector
+  const DROPDOWN_MAX_QUANTITY = 20;
+
+  const dropdownOptions = Array.from(
+    { length: parseInt(DROPDOWN_MAX_QUANTITY, 10) },
+    (_, i) => {
+        const quantityOption = i + 1;
+        return {
+          value: `${quantityOption}`,
+          text: `${quantityOption}`,
+        };
+    }
+  );
+
   // Configuration
   const {
     'hide-heading': hideHeading = 'false',
@@ -172,6 +187,10 @@ export default async function decorate(block) {
   await Promise.all([
     // Cart List
     provider.render(CartSummaryList, {
+      // replace qty selector by a dropdown
+      quantityType: 'dropdown',
+      dropdownOptions,
+      
       hideHeading: hideHeading === 'true',
       routeProduct: createProductLink,
       routeEmptyCartCTA: startShoppingURL ? () => rootLink(startShoppingURL) : undefined,

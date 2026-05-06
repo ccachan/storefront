@@ -1,0 +1,28 @@
+{
+  "public": {
+    "default": {
+      "commerce-endpoint": "https://na1-sandbox.api.commerce.adobe.com/QD1T4hbz1zGxLHYpp8cyPy/graphql",
+      "headers": {
+        "cs": {
+          "AC-View-ID": "ac811597-5f5e-4287-bc16-5731bca7d164",
+          "AC-Price-Book-ID": "default"
+        }
+      },
+      "commerce-assets-enabled": false,
+      "analytics": {
+        "base-currency-code": "EUR",
+        "environment": "Testing",
+        "environment-id": "QD1T4hbz1zGxLHYpp8cyPy",
+        "locale": "en-US",
+        "store-url": "https://https://main--storefront--ccachan.aem.live/",
+        "store-view-currency-code": "EUR",
+        "view-id": "ac811597-5f5e-4287-bc16-5731bca7d164"
+      },
+      "plugins": {
+        "picker": {
+          "rootCategory": "default"
+        }
+      }
+    }
+  }
+}
